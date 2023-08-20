@@ -19,8 +19,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here]
-- Live Site URL: [Add live site URL here]
+- Solution URL: [https://github.com/lizSilva27/Fylo_Landing_Page-FrontendMentor]
+- Live Site URL: [https://fylo-landing-page-ftm.netlify.app]
 
 ## My process
 
