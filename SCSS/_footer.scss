@@ -1,0 +1,90 @@
+@use 'variables';
+
+.footer {
+
+  // height: 685px;
+  background-color: variables.$Very-Dark-Blue;
+  color: variables.$Light-Grayish-Blue;
+  padding: 65px 65px 45px 39px;
+
+  &__logo {
+    width: 178px;
+    height: 50px;
+    margin-bottom: 45px;
+  }
+
+  &__phone-container {
+
+    display: flex;
+    gap: 20px;
+    margin-bottom: 22px;
+
+    a {
+      color: variables.$Light-Grayish-Blue;
+      text-decoration: none;
+      font-size: 0.98em;
+
+      &:hover {
+        color: variables.$Bright-Blue;
+      }
+    }
+  }
+
+  &__email-container {
+    height: 19px;
+    @extend .footer__phone-container;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-top: 65px;
+    margin-bottom: 55px;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: variables.$Light-Grayish-Blue;
+
+        &:hover {
+          color: variables.$Bright-Blue;
+        }
+      }
+    }
+  }
+
+  &__social-networks {
+
+    display: flex;
+    justify-content: center;
+    gap: 11px;
+    margin-bottom: 50px;
+
+    img {
+      width: 30px;
+
+      &:hover {
+        width: 35px;
+      }
+    }
+
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .footer {
+    height: 395px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 90px 260px 16px 80px;
+
+    &__social-networks {
+      margin-top: 65px;
+    }
+  }
+}

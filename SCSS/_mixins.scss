@@ -1,0 +1,80 @@
+@use 'variables';
+
+@mixin desktopView($width: 1440px, $height: unset, $fs: unset) {
+  @media (min-width: 1440px) {
+    width: $width;
+    height: $height;
+    font-size: $fs;
+  }
+}
+
+@mixin buttons {
+  background-color: variables.$Bright-Blue;
+  color: variables.$Light-Grayish-Blue;
+  font-weight: 700;
+  font-size: 0.9em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px variables.$Light-Gray;
+
+  &:hover {
+    filter: brightness(120%);
+  }
+}
+
+@mixin ilustrationDesktopView {
+  @media (min-width: 1440px) {
+    width: 635px;
+  }
+}
+
+@mixin sectionsDesktopView($gap, $reverse: false) {
+  @media (min-width: 1440px) {
+
+    display: flex;
+
+    @if $reverse == true {
+      flex-direction: row-reverse;
+    }
+
+    align-items: center;
+    gap: $gap;
+  }
+}
+
+@mixin forms {
+  display: flex;
+  flex-direction: column;
+  // height: 120px;
+  justify-content: space-between;
+
+  & input {
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid variables.$Light-Gray;
+    outline: none;
+    margin-bottom: 19px;
+  }
+
+  & [type="text"] {
+    padding: 15px;
+  }
+
+  & [type="text"]::placeholder {
+    color: variables.$Light-Gray;
+  }
+
+  & [type="submit"] {
+    background-color: variables.$Bright-Blue;
+    color: variables.$Light-Grayish-Blue;
+    font-weight: 700;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(120%);
+    }
+    
+  }
+}

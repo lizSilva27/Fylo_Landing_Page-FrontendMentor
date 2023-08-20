@@ -1,0 +1,299 @@
+@use 'variables';
+@use 'startup-rules';
+@use 'mixins';
+@use 'card';
+@use 'footer';
+
+.main-container {
+  width: 375px;
+  @include mixins.desktopView;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 24px 0;
+  margin-bottom: 100px;
+
+  &__logo {
+    width: 80px;
+    height: 25px;
+    @include mixins.desktopView(166px, 48px);
+  }
+
+  &__nav-container {
+    font-size: 0.8em;
+    display: flex;
+    width: 167px;
+    justify-content: space-between;
+    @include mixins.desktopView(270px, unset, 1em);
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: variables.$Bright-Blue;
+      }
+    }
+  }
+}
+
+.header {
+  padding: 0 24px 180px;
+
+  background: {
+    image: url(../images/bg-curve-mobile.svg);
+    repeat: no-repeat;
+    position-y: bottom;
+  }
+
+  @include mixins.sectionsDesktopView(58px, true);
+
+  &__ilustration {
+    width: 100%;
+    margin-bottom: 50px;
+
+    @include mixins.ilustrationDesktopView;
+  }
+
+  .header-content {
+
+    &__title {
+      font-family: variables.$heading-font;
+      font-size: 1.5em;
+      font-weight: 700;
+      text-align: center;
+      line-height: 35px;
+      margin-bottom: 30px;
+    }
+
+    &__description {
+      font-size: 0.95em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    &__form {
+      @include mixins.forms;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .header {
+
+    background-image: url(../images/bg-curve-desktop.svg);
+    height: 470;
+
+    .header-content {
+      width: 585px;
+
+      &__title {
+        font-size: 2.49em;
+        line-height: 60px;
+        text-align: left;
+      }
+
+      &__description {
+        font-size: 1.09em;
+        text-align: left;
+      }
+
+      &__form {
+        width: 535px;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 45px;
+      }
+
+      &__form [type="text"] {
+        width: 320px;
+        height: 45px;
+      }
+
+
+      &__form [type="submit"] {
+        width: 200px;
+        height: 45px;
+      }
+    }
+  }
+}
+
+.details {
+
+  background-color: variables.$Light-Grayish-Blue;
+  height: 865px;
+  padding: 0 24px;
+
+  @include mixins.sectionsDesktopView(80px, true);
+
+  &__ilustration {
+    width: 100%;
+    margin-bottom: 90px;
+    @include mixins.ilustrationDesktopView;
+  }
+
+  .details-content {
+
+    &__title {
+      font-family: variables.$heading-font;
+      font-size: 1em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    &__paragraph {
+      margin-bottom: 22px;
+      font-size: 0.86em;
+      line-height: 20px;
+    }
+
+    &__link {
+      width: 100%;
+      display: block;
+      text-align: center;
+      color: variables.$Moderate-Cyan;
+      text-decoration: none;
+      margin-bottom: 40px;
+    }
+
+    &__line {
+      border-top: 2px solid variables.$Moderate-Cyan;
+      height: 2px;
+      margin: 7px 76px 0 76px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .details {
+    height: 598px;
+
+    &__ilustration {
+      width: 540px;
+    }
+
+    .details-content {
+
+      width: 660px;
+      height: 498px;
+
+      &__title {
+        font-size: 2.5em;
+        text-align: left;
+      }
+
+      &__paragraph {
+        width: 520px;
+        font-size: 0.99em;
+        line-height: 25px;
+      }
+
+      &__link {
+        text-align: left;
+      }
+
+      &__line {
+        width: 170px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.early-access {
+
+  background-color: variables.$Desaturated-Blue;
+  color: variables.$white;
+  padding: 60px 62px 70px 36px;
+
+  @include mixins.sectionsDesktopView(244px);
+
+
+  &__paragraph {
+
+    width: 277px;
+
+    text-align: center;
+
+    &__title {
+      font-size: 1.4em;
+      font-weight: 700;
+    }
+
+    &__text {
+      font-size: 0.86em;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    @include mixins.forms;
+
+    &__error {
+      color: variables.$red;
+      font-size: 0.8em;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .early-access {
+
+    height: 320px;
+    padding: 110px 120px 85px 80px;
+
+    // @include mixins.sectionsDesktopView(244px);
+
+
+    &__paragraph {
+
+      text-align: left;
+
+      &__title {
+        width: 350px;
+        font-size: 2em;
+      }
+
+      &__text {
+        width: 515px;
+        font-size: 1.05em;
+        text-align: left
+      }
+
+      padding-right: 580px;
+    }
+
+    &__form {
+
+      width: 480px;
+      // height: 113px;
+
+      &__button {
+        width: 200px;
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.attribution {
+  margin: 40px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
